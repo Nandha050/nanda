@@ -142,15 +142,3 @@
               0 0 120px -40px color-mix(in oklab, var(--brand-2) 50%, transparent);
 }
 
-@utility noise {
-  position: relative;
-}
-@utility noise::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.04;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence baseFrequency='0.9'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-}
