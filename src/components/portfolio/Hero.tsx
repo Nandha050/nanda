@@ -1,158 +1,126 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Download, Mail, Github, Linkedin } from "lucide-react";
-import { useTypewriter } from "@/hooks/use-typewriter";
-import { ParticleField } from "./ParticleField";
-import profile from "@/assets/profile.jpg";
+import { Github, Linkedin, FileText } from "lucide-react";
+import profile from "@/assets/orange.jpg";
 
-const ROLES = ["AI Developer", "Full Stack Developer", "Problem Solver", "Hackathon Builder"];
+
 
 export function Hero() {
-  const typed = useTypewriter(ROLES, 70, 1400);
   return (
-    <section id="home" className="relative isolate min-h-screen overflow-hidden pt-28">
-      {/* gradient backdrop */}
-      <div aria-hidden className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-[-10%] h-[640px] w-[1100px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,oklch(0.72_0.2_290_/_0.35),transparent_60%)] blur-3xl" />
-        <div className="absolute right-[-10%] top-1/3 h-[480px] w-[680px] rounded-full bg-[radial-gradient(circle,oklch(0.7_0.2_250_/_0.28),transparent_60%)] blur-3xl" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,#0B0B0F_85%)]" />
-        <svg className="absolute inset-0 size-full opacity-[0.06]" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M40 0H0V40" fill="none" stroke="white" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
-      <ParticleField />
+    <section id="home" className="relative flex min-h-screen items-center bg-[#0A0A0A] overflow-hidden">
+      
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
+        
+        {/* Left Column - Typography */}
+        <div className="z-10 flex flex-col items-start px-6 pt-32 pb-16 lg:px-12 lg:py-0">
+          
+          {/* Availability Badge */}
+          <div className="text-xs uppercase tracking-[0.2em]  rounded-full text-[#F97316] ">— Available for opportunities · 2026</div>
 
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-12 md:grid-cols-[1.2fr_1fr]">
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="glass inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs text-muted-foreground"
-          >
-            <span className="relative flex size-1.5">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex size-1.5 rounded-full bg-emerald-400" />
-            </span>
-            Available for opportunities · 2026
-          </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.05 }}
-            className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl xl:text-7xl"
           >
-            Hi, I'm <span className="text-gradient">Nanda Kishor</span>.
-            <br />
-            <span className="text-foreground/90">Building intelligent products.</span>
+            <span className="text-white">Hi </span> <span className="text-white">I'm</span><br />
+
+            <span className="text-white">Nanda </span> 
+            <span className="bg-gradient-to-r from-[#F97316] to-[#EA580C] bg-clip-text text-transparent">Kishor</span>
+            {/* <span className="bg-gradient-to-r from-[#F97316] to-[#EA580C] bg-clip-text text-transparent">AI</span> */}
+            
+            {/* <span className="bg-gradient-to-r from-[#F97316] to-[#EA580C] bg-clip-text text-transparent">Developer</span> */}
           </motion.h1>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="mt-6 flex h-8 items-center gap-2 font-mono text-base text-muted-foreground sm:text-lg"
-          >
-            <span className="text-foreground/80">{">"}</span>
-            <span className="text-gradient font-semibold">{typed}</span>
-            <span className="ml-0.5 inline-block h-5 w-[2px] animate-pulse bg-[oklch(0.72_0.2_290)]" />
-          </motion.div>
-
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="mt-6 max-w-lg text-lg leading-relaxed text-[#A3A3A3]"
           >
-            CS Engineering student crafting AI-powered products and polished full-stack
-            experiences. I turn ambitious ideas into shipped software — fast.
+            Computer Science engineer passionate about building AI-powered products and exceptional full-stack experiences. I transform ambitious ideas into scalable, elegant, and impactful software.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-8 flex flex-wrap items-center gap-3"
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="mt-10 flex flex-wrap items-center gap-4 sm:gap-6"
           >
+            <a
+              href="mailto:nandakishor0718@gmail.com"
+              className="group flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-black transition-transform hover:scale-105"
+            >
+              Get in touch 
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                <path d="M7 17L17 7M9 7h8v8" />
+              </svg>
+            </a>
+            
             <a
               href="/resume.pdf"
-              download
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[oklch(0.72_0.2_290)] to-[oklch(0.7_0.2_250)] px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_40px_-10px_oklch(0.72_0.2_290_/_0.7)] transition-transform hover:scale-[1.02]"
+              target="_blank"
+              className="flex items-center gap-2 rounded-full border border-[#262626] bg-[#161616] px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-[#262626]"
             >
-              <Download className="size-4" />
-              Download Resume
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
+              View Resume
             </a>
-            <a
-              href="#contact"
-              className="glass inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-colors hover:bg-white/10"
+
+            <button
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              className="group text-sm font-medium text-[#A3A3A3] transition-colors hover:text-white"
             >
-              <Mail className="size-4" />
-              Contact me
-              <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
+              View work <span className="transition-transform group-hover:translate-x-1 inline-block">→</span>
+            </button>
           </motion.div>
 
+          {/* Stats Row */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="mt-8 flex items-center gap-4 text-muted-foreground"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            className="mt-16 flex flex-wrap items-center gap-12 sm:gap-16"
           >
-            <a href="https://github.com/Nandha050" target="_blank" rel="noreferrer" aria-label="GitHub" className="transition-colors hover:text-foreground">
-              <Github className="size-5" />
-            </a>
-            <a href="https://www.linkedin.com/in/nanda-kishor-b3ab0833b/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-foreground">
-              <Linkedin className="size-5" />
-            </a>
-            <a href="mailto:nandakishor0718@gmail.com" aria-label="Email" className="transition-colors hover:text-foreground">
-              <Mail className="size-5" />
-            </a>
+            <div className="flex flex-col gap-1">
+              <span className="font-display text-3xl font-bold text-[#F97316]">10+</span>
+              <span className="text-xs font-medium text-[#A3A3A3]">Projects shipped</span>
+            </div>
+            <div className="flex flex-col gap-1">
+              <span className="font-display text-3xl font-bold text-[#F97316]">6+</span>
+              <span className="text-xs font-medium text-[#A3A3A3]">Hackathons</span>
+            </div>
+            <div className="flex flex-col gap-1">
+              <span className="font-display text-3xl font-bold text-[#F97316]">5★</span>
+              <span className="text-xs font-medium text-[#A3A3A3]">HackerRank</span>
+            </div>
           </motion.div>
         </div>
 
-        {/* Portrait */}
+        {/* Right Column - Blended Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative mx-auto w-full max-w-sm"
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="absolute inset-y-0 right-0 w-full lg:w-1/2"
         >
-          <div className="absolute -inset-6 -z-10 rounded-full bg-[conic-gradient(from_0deg,oklch(0.72_0.2_290_/_0.5),oklch(0.7_0.2_250_/_0.5),oklch(0.72_0.2_290_/_0.5))] blur-2xl" />
-          <div className="gradient-border overflow-hidden rounded-[2rem] p-1">
-            <div className="overflow-hidden rounded-[1.75rem]">
-              <img
-                src={profile}
-                alt="Nanda Kishor portrait"
-                width={768}
-                height={896}
-                className="size-full object-cover"
-              />
-            </div>
-          </div>
-          {/* Floating chips */}
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="glass absolute -left-6 top-10 hidden rounded-2xl px-3 py-2 text-xs font-medium shadow-xl sm:block"
-          >
-            <div className="text-gradient font-semibold">AI / ML</div>
-            <div className="text-muted-foreground">PyTorch · LLMs</div>
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="glass absolute -right-4 bottom-12 hidden rounded-2xl px-3 py-2 text-xs font-medium shadow-xl sm:block"
-          >
-            <div className="text-gradient font-semibold">Full Stack</div>
-            <div className="text-muted-foreground">React · Node · Cloud</div>
-          </motion.div>
+          {/* Image with gradient mask for blending */}
+          <div 
+            className="h-full w-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url(${profile})`,
+              WebkitMaskImage: "linear-gradient(to right, transparent, black 30%, black 100%)",
+              maskImage: "linear-gradient(to right, transparent, black 30%, black 100%)"
+            }}
+          />
+
+          {/* Cinematic lighting overlay to fit palette better */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#F97316]/10 to-transparent mix-blend-overlay" />
+
+
         </motion.div>
+
       </div>
     </section>
   );

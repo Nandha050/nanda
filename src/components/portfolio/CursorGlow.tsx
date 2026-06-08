@@ -26,7 +26,7 @@ export function CursorGlow() {
       style={{ x: sx, y: sy }}
       className="pointer-events-none fixed left-0 top-0 z-[1] h-[400px] w-[400px] rounded-full opacity-60 blur-3xl"
     >
-      <div className="size-full rounded-full bg-[radial-gradient(circle_at_center,oklch(0.72_0.2_290_/_0.35),transparent_60%)]" />
+      <div className="size-full rounded-full bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.35),transparent_60%)]" />
     </motion.div>
   );
 }

@@ -7,20 +7,23 @@ export function useTypewriter(words: string[], speed = 80, pause = 1500) {
 
   useEffect(() => {
     const word = words[i % words.length];
-    const t = setTimeout(() => {
-      if (!del) {
-        const next = word.slice(0, text.length + 1);
-        setText(next);
-        if (next === word) setTimeout(() => setDel(true), pause);
-      } else {
-        const next = word.slice(0, text.length - 1);
-        setText(next);
-        if (next === "") {
-          setDel(false);
-          setI((p) => p + 1);
+    const t = setTimeout(
+      () => {
+        if (!del) {
+          const next = word.slice(0, text.length + 1);
+          setText(next);
+          if (next === word) setTimeout(() => setDel(true), pause);
+        } else {
+          const next = word.slice(0, text.length - 1);
+          setText(next);
+          if (next === "") {
+            setDel(false);
+            setI((p) => p + 1);
+          }
         }
-      }
-    }, del ? speed / 2 : speed);
+      },
+      del ? speed / 2 : speed,
+    );
     return () => clearTimeout(t);
   }, [text, del, i, words, speed, pause]);
 

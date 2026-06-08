@@ -1,18 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { FloatingNav } from "@/components/portfolio/FloatingNav";
 import { Hero } from "@/components/portfolio/Hero";
-import { About } from "@/components/portfolio/About";
+import { Education } from "@/components/portfolio/Education";
 import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
 import { Experience } from "@/components/portfolio/Experience";
-import { Testimonials } from "@/components/portfolio/Testimonials";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { CursorGlow } from "@/components/portfolio/CursorGlow";
 import { Loader } from "@/components/portfolio/Loader";
 
 const TITLE = "Nanda Kishor — AI & Full Stack Developer";
-const DESC = "Portfolio of Nanda Kishor — CSE student building AI-powered, full-stack products with the polish of a top-tier product team.";
+const DESC =
+  "Portfolio of Nanda Kishor — CSE student building AI-powered, full-stack products with the polish of a top-tier product team.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,16 +31,15 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="relative min-h-screen bg-[#0B0B0F] text-foreground">
+    <main className="relative min-h-screen bg-[#0B0B0F] text-foreground overflow-x-hidden">
       <Loader />
       <CursorGlow />
       <FloatingNav />
       <Hero />
-      <About />
+      <Education />
       <Projects />
       <Skills />
       <Experience />
-      <Testimonials />
       <Contact />
       <Footer />
     </main>

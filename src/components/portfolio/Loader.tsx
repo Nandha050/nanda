@@ -4,29 +4,54 @@ import { useEffect, useState } from "react";
 export function Loader() {
   const [show, setShow] = useState(true);
   useEffect(() => {
-    const t = setTimeout(() => setShow(false), 1100);
+    const t = setTimeout(() => setShow(false), 2800);
     return () => clearTimeout(t);
   }, []);
+
   return (
     <AnimatePresence>
       {show && (
         <motion.div
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0B0B0F]"
         >
-          <div className="flex flex-col items-center gap-4">
+          <div className="relative flex items-center justify-center">
+            {/* Fluid glowing background */}
             <motion.div
-              initial={{ scale: 0.6, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative"
-            >
-              <div className="absolute inset-0 -z-10 rounded-full bg-[radial-gradient(circle,oklch(0.72_0.2_290_/_0.6),transparent_60%)] blur-2xl" />
-              <div className="size-12 rounded-2xl bg-gradient-to-br from-[oklch(0.72_0.2_290)] to-[oklch(0.7_0.2_250)] shadow-[0_0_40px_oklch(0.72_0.2_290)]" />
-            </motion.div>
-            <div className="font-display text-sm tracking-widest text-muted-foreground">
-              NK · LOADING
+              animate={{ 
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.6, 0.3],
+                rotate: [0, 90, 0]
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-0 -z-10 size-64 rounded-full bg-[radial-gradient(circle,rgba(249,115,22,0.8),transparent_70%)] blur-3xl"
+            />
+            
+            {/* Liquid Fill Name */}
+            <div className="relative font-display text-5xl font-black uppercase tracking-widest drop-shadow-[0_0_20px_rgba(249,115,22,0.4)] sm:text-7xl">
+              {/* Hollow Text */}
+              <motion.span 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-transparent" 
+                style={{ WebkitTextStroke: "2px #F97316" }}
+              >
+                Nanda.
+              </motion.span>
+              
+              {/* Filled Liquid Text */}
+              <motion.div
+                className="absolute bottom-0 left-0 right-0 overflow-hidden"
+                initial={{ height: "0%" }}
+                animate={{ height: "100%" }}
+                transition={{ duration: 2, ease: "easeInOut", delay: 0.3 }}
+              >
+                <span className="absolute bottom-0 left-0 text-[#F97316]">
+                  Nanda.
+                </span>
+              </motion.div>
             </div>
           </div>
         </motion.div>
