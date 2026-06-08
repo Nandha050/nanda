@@ -45,6 +45,17 @@ await esbuild({
   target: "node20",
   format: "esm",
   outfile: path.join(outFnDir, "server.js"),
+  // Inject a real require() so CJS packages like react-dom can require("util") etc.
+  banner: {
+    js: [
+      'import { createRequire as __createRequire } from "node:module";',
+      'import { fileURLToPath as __fileURLToPath } from "node:url";',
+      'import { dirname as __dirname2 } from "node:path";',
+      'const require = __createRequire(import.meta.url);',
+      'const __filename = __fileURLToPath(import.meta.url);',
+      'const __dirname = __dirname2(__filename);',
+    ].join("\n"),
+  },
   // Only keep actual Node.js built-in modules external — bundle everything else
   external: [
     "node:*",
