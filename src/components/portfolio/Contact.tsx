@@ -6,9 +6,9 @@ const socials = [
   { label: "Email", icon: Mail, href: "mailto:nandakishor0718@gmail.com" },
   { label: "GitHub", icon: Github, href: "https://github.com/Nandha050" },
   { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/nanda-kishor-b3ab0833b/" },
-  { label: "LeetCode", iconText: "LeetCode", href: "https://leetcode.com/" },
-  { label: "HackerRank", iconText: "HackerRank", href: "https://hackerrank.com/" },
-  { label: "GeeksforGeeks", iconText: "GFG", href: "https://geeksforgeeks.org/" },
+  { label: "LeetCode", iconText: "LeetCode", href: "https://leetcode.com/u/9HWcyJXe6l/" },
+  { label: "HackerRank", iconText: "HackerRank", href: "https://www.hackerrank.com/profile/nandhu_4562" },
+  { label: "GeeksforGeeks", iconText: "GFG", href: "https://www.geeksforgeeks.org/profile/nandakishor7" },
   { label: "Credly", iconText: "Credly", href: "https://www.credly.com/users/nanda-kishor.0caa1279" },
 ];
 

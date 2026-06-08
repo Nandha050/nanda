@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, FileText } from "lucide-react";
 import profile from "@/assets/orange.jpg";
+import resumePdf from "@/assets/resume.pdf";
 
 
 
@@ -58,7 +59,7 @@ export function Hero() {
             </a>
             
             <a
-              href="/resume.pdf"
+              href={resumePdf}
               target="_blank"
               className="flex items-center gap-2 rounded-full border border-[#262626] bg-[#161616] px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-[#262626]"
             >
@@ -83,17 +84,14 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             className="mt-16 flex flex-wrap items-center gap-12 sm:gap-16"
           >
-            <div className="flex flex-col gap-1">
-              <span className="font-display text-3xl font-bold text-[#F97316]">10+</span>
-              <span className="text-xs font-medium text-[#A3A3A3]">Projects shipped</span>
+            <div className=" gap-1">
+              <span className="font-display text-3xl font-bold text-[#F97316]">--THINK</span>
             </div>
-            <div className="flex flex-col gap-1">
-              <span className="font-display text-3xl font-bold text-[#F97316]">6+</span>
-              <span className="text-xs font-medium text-[#A3A3A3]">Hackathons</span>
+            <div className=" gap-1">
+              <span className="font-display text-3xl font-bold text-[#ffffff]">BUILD</span>
             </div>
-            <div className="flex flex-col gap-1">
-              <span className="font-display text-3xl font-bold text-[#F97316]">5★</span>
-              <span className="text-xs font-medium text-[#A3A3A3]">HackerRank</span>
+            <div className=" gap-1">
+              <span className="font-display text-3xl font-bold text-[#F97316]">REPEAT...</span>
             </div>
           </motion.div>
         </div>
